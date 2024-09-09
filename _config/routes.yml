@@ -1,0 +1,9 @@
+---
+Name: EveryRESTfulAPIroute
+After:
+    - '#rootroutes'
+    - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'restful//$Action/$ID/$OtherID/': 'EveryRESTfulAPI\Control\EveryRESTfulAPIController'

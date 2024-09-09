@@ -1,0 +1,425 @@
+# API token lifetime in seconds 
+API_Token_Lifetime: 864000
+
+SilverStripe\ORM\DataObject:
+    API_Allowed_Methods:
+        - getFormFields
+        - summaryFields
+        - fieldLabels
+        - CountItems      
+EveryDataStore\Model\App:
+    API_View_Fields:
+       - Slug
+       - Title
+       - Icon()
+       - ShortDescription
+       - DisplayPrice()
+       - Author
+       - Website
+       - Version
+       - Installed()
+       - Description
+       - Price
+    API_Create_Fields:
+    API_Edit_Fields: 
+    API_Filter_DataStoreID_Map: 'false'
+    API_Dataobject_Allowed_Realations:
+       - Logo
+SilverStripe\Security\Permission:
+    API_View_Fields:
+        - Code
+        - Arg
+        - Type
+    API_Filter_DataStoreID_Map: 'false'
+
+SilverStripe\Security\Member:
+    API_Filter_DataStoreID_Map: 'CurrentDataStoreID'
+    API_View_Fields:
+        - Slug
+        - Active
+        - FirstName
+        - Surname
+        - Email
+        - Company
+        - Address
+        - City
+        - Postcode
+        - Country
+        - Phone
+        - Created
+        - LastEdited
+        - avatarURL()
+        - Icon()
+    API_Create_Fields:
+        - Slug
+        - Active
+        - FirstName
+        - Surname
+        - Email
+        - Company
+        - Address
+        - City
+        - Postcode
+        - Country
+        - Phone
+        - Locale
+        - ThemeColor
+        - SendPasswordResetLink
+    API_Edit_Fields:
+        - Slug
+        - Active
+        - FirstName
+        - Surname
+        - Email
+        - Company
+        - Address
+        - City
+        - Postcode
+        - Country
+        - Phone
+        - Locale
+        - ThemeColor
+        - SendPasswordResetLink
+    API_Dataobject_Allowed_Realations:
+        - Groups
+        - DataStores
+        - Avatar
+        - CurrentDataStore
+        - summaryFields
+    API_Allowed_Methods:
+         - Permissions
+    API_Dataobject_Allowed_Extensions:
+        - EveryDataStore\Extension\MemberExtension 
+    API_View_All: true
+SilverStripe\Security\Group:
+    API_Filter_DataStoreID_Map: 'DataStoreID'
+    API_View_Fields:
+        - Slug
+        - Title
+    API_Create_Fields:
+        - Slug
+        - Title
+    API_Edit_Fields:
+        - Slug
+        - Title
+    API_Dataobject_Allowed_Realations:
+        - Members
+        - Permissions
+SilverStripe\Assets\Folder:
+    API_View_Fields:
+        - Slug
+        - Title
+        - Created
+        - LastEdited
+    API_Create_Fields:
+        - Slug
+        - Title
+    API_Edit_Fields:
+        - Slug
+        - Title
+    API_Filter_DataStoreID_Map: 'CreatedBy.CurrentDataStore.ID'
+    API_Dataobject_Allowed_Realations:
+        - DataStore
+        - Record
+        - RecordSetItem
+        - Children    
+SilverStripe\Assets\File:
+    API_View_Fields:
+        - Slug
+        - Title
+        - Name
+        - Filename
+        - URL
+        - Version
+        - Created
+        - LastEdited
+    API_Create_Fields:
+        - Slug
+        - Title
+        - Name
+    API_Edit_Fields:
+        - Slug
+        - Title
+        - Name
+    API_Filter_DataStoreID_Map: 'CreatedBy.CurrentDataStore.ID'
+    API_Dataobject_Allowed_Realations:
+        - CreatedBy
+        - UpdatedBy
+        - Version
+        - Notes
+        - allVersions
+SilverStripe\Assets\Image:
+    API_View_Fields:
+        - Slug
+        - Title
+        - Created
+        - LastEdited
+    API_Create_Fields:
+        - Slug
+        - Title
+    API_Edit_Fields:
+        - Slug
+        - Title       
+EveryDataStore\Model\DataStore:
+    API_View_Fields:
+        - Slug
+        - Title
+        - Created
+        - LastEdited
+        - Settings()
+    API_Create_Fields:
+        - Slug
+        - Title
+    API_Edit_Fields:
+        - Slug
+        - Title
+    API_Filter_DataStoreID_Map: 'false'
+    API_Dataobject_Allowed_Realations:
+        - Menu
+        - Records
+        - Folder
+        - Groups
+        - Members
+EveryDataStore\Model\DataStoreInfo:
+    API_View_Fields:
+        - Slug
+        - Company
+        - Address
+        - PostCode
+        - City
+        - Country
+        - BillingEmail
+        - AccountingEmail
+        - Phone
+        - UID
+    API_Create_Fields:
+    API_Edit_Fields:
+        - Slug
+        - Company
+        - Address
+        - PostCode
+        - City
+        - Country
+        - BillingEmail
+        - AccountingEmail
+        - Phone
+        - UID
+    API_Filter_DataStoreID_Map: 'DataStoreID'
+    API_Dataobject_Allowed_Realations:
+        - Logo
+EveryDataStore\Model\Menu:
+    API_View_Fields:
+        - Slug
+        - ParentID
+        - Active
+        - Title
+        - Controller
+        - Action
+        - ActionID
+        - ActionOtherID
+        - AdminMenu
+        - UserMenu
+        - Icon
+        - Badge()
+        - Sort
+        - Created
+    API_Create_Fields:
+        - Slug
+        - Active
+        - DataStoreID
+        - Title
+        - Controller
+        - Action
+        - ActionID
+        - ActionOtherID
+        - AdminMenu
+        - UserMenu
+        - ParentSlug
+        - Icon
+        - BadgeEndpoint
+        - Sort
+    API_Edit_Fields:
+        - Slug
+        - Active
+        - DataStoreID
+        - Title
+        - Controller
+        - Action
+        - ActionID
+        - ActionOtherID
+        - AdminMenu
+        - UserMenu
+        - ParentSlug
+        - Icon
+        - BadgeEndpoint
+        - Sort
+    API_Filter_DataStoreID_Map: 'DataStoreID'
+    API_Dataobject_Allowed_Realations:
+        - Children
+        - Parent
+        - Groups
+    API_Ignor_Boolean_Fields:
+        - Active
+        - AdminMenu
+        - UserMenu
+EveryDataStore\Model\RecordSet\RecordSet:
+    API_Filter_DataStoreID_Map: 'DataStoreID'
+    API_Allowed_Methods:
+        - getNiceItems
+    API_View_Fields:
+        - Slug
+        - Title
+        - Active
+        - ShowInMenu
+        - AllowUpload
+        - Created
+        - LastEdited
+        - RecordResultlistLabels()
+        - Versions()
+    API_Create_Fields:
+        - Slug
+        - Title
+        - Active
+        - ShowInMenu
+        - AllowUpload
+    API_Edit_Fields:
+        - Slug
+        - Title
+        - Active
+        - ShowInMenu
+        - AllowUpload
+    API_Dataobject_Allowed_Realations:
+        - Menu
+        - Form
+        - Folder
+        - Groups
+        - Members
+        - getNiceItems
+EveryDataStore\Model\RecordSet\RecordSetItem:
+    API_Filter_DataStoreID_Map: 'RecordSet.DataStore.ID'
+    API_View_Fields:
+        - Slug
+        - Created
+        - LastEdited
+        - Version
+        - Versions()
+        - PDFTemplateNames()
+        - RelationRecordItems()
+        - getRecordItems()
+    API_Create_Fields:
+        - Slug
+        - RecordSetSlug
+    API_Edit_Fields:
+        - Slug
+        - RecordSetSlug
+    API_Dataobject_Allowed_Realations:
+        - ItemData
+        - Folder
+        - RecordSet
+        - Notes
+        - RecordItems
+EveryDataStore\Model\RecordSet\RecordSetItemData:
+    API_Filter_DataStoreID_Map: 'RecordSetItem.RecordSet.DataStore.ID'
+    API_View_Fields:
+        - Value()
+        - FormFieldSlug()
+        - FormFieldTypeSlug()
+    API_Create_Fields:
+        - Value
+        
+    API_Edit_Fields:
+        - Value
+    API_Dataobject_Allowed_Realations:
+        - RecordSetItem
+        - FormField
+EveryDataStore\Model\RecordSet\Form:
+    API_Filter_DataStoreID_Map: 'RecordSet.DataStore.ID'
+    API_View_Fields:
+        - Slug
+        - Fields()
+    API_Dataobject_Allowed_Realations:
+ 
+EveryDataStore\Model\RecordSet\Form\FormField:
+    API_Filter_DataStoreID_Map: 'Column.Section.RecordSet.DataStore.ID'
+    API_View_Fields:
+        - Slug
+        - Sort
+    API_Create_Fields:
+        - Sort
+        
+    API_Edit_Fields:
+        - Sort
+        
+    API_Dataobject_Allowed_Realations:
+        - FormFieldType
+
+EveryDataStore\Model\RecordSet\Form\FormFieldType:
+    API_View_Fields:
+       - Slug
+       - Title
+       - FontIconCls
+    API_Create_Fields:
+       - Slug
+       - Title
+       - FontIconCls
+    API_Edit_Fields:
+       - Slug
+       - Title
+       - FontIconCls
+    API_Filter_DataStoreID_Map: 'false'
+    API_Login_Required: 'false'
+
+EveryDataStore\Model\Note:
+    API_Filter_DataStoreID_Map: 'CreatedBy.CurrentDataStoreID'
+    API_View_Fields:
+        - Slug
+        - Created
+        - Content
+        - CreatedByFullname()
+    API_Create_Fields:
+        - Slug
+        - Content   
+    API_Dataobject_Allowed_Realations:
+        - RecordSetItem
+        
+EveryDataStore\Model\EveryConfiguration:
+    API_Filter_DataStoreID_Map: 'DataStoreID'
+    API_View_Fields:
+        - Slug
+        - Title
+        - Value
+        - Created
+    API_Create_Fields:
+        - Slug
+        - Title
+        - Value
+    API_Edit_Fields:
+        - Slug
+        - Title
+        - Value 
+API_Namespace_Class_Map:
+    App: 'EveryDataStore\Model\App'
+    DataStore: 'EveryDataStore\Model\DataStore'
+    Menu: 'EveryDataStore\Model\Menu'
+    Record: 'EveryDataStore\Model\RecordSet\RecordSet'
+    RECORDSET: 'EveryDataStore\Model\RecordSet\RecordSet'
+    RecordForm: 'EveryDataStore\Model\RecordSet\Form'
+    RecordItem: 'EveryDataStore\Model\RecordSet\RecordSetItem'
+    RecordItemData: 'EveryDataStore\Model\RecordSet\RecordSetItemData'
+    FormFieldType: 'EveryDataStore\Model\RecordSet\Form\FormFieldType'
+    FormField: 'EveryDataStore\Model\RecordSet\Form\FormField'
+    Member: 'SilverStripe\Security\Member'
+    Group: 'SilverStripe\Security\Group'
+    Folder: 'SilverStripe\Assets\Folder'
+    File: 'SilverStripe\Assets\File'
+    Image: 'SilverStripe\Assets\Image'
+    EveryConfiguration: 'EveryDataStore\Model\EveryConfiguration'
+    TestModel: 'EveryRESTfulAPI\Model\TestModel'
+    Permission: 'SilverStripe\Security\Permission'
+    Note: 'EveryDataStore\Model\Note'
+API_Custom_Class_Map:
+    Form: EveryRESTfulAPI\Customer\Form\Form;
+API_RealationField_Allowed_Models:
+    - Menu
+    - Member
+    - Group

@@ -1,0 +1,8 @@
+de:
+    ERROR:
+        CODE_204_MSG: "Object Doesn't have a content"
+        CODE_404_MSG: "Object not found"
+        CODE_400_MSG: "Bad Request"
+        INSTALLING_APP_NOT_ALLOWED: "Installing app is not allowed"
+    SilverStripe\Security\Member:
+        CURRENTDATASTORE: 'Aktueller DataStore'

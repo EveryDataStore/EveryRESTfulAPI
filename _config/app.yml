@@ -1,0 +1,6 @@
+SilverStripe\Security\Member:
+  extensions:
+    - EveryRESTfulAPI\Extension\EveryRESTfulAPIMemberExtension
+SilverStripe\ORM\DataObject:
+  extensions:
+    - EveryRESTfulAPI\Extension\EveryRESTfulAPIDataObjectExtension
