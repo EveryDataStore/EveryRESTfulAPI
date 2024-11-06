@@ -91,12 +91,13 @@ class CustomDataImporterHelper extends EveryRESTfulAPIHelper {
         if ($file) {
             $formFieldIDs = [];
             while (($line = fgetcsv($file)) !== FALSE) {
-                $niceLine = explode(";", $line);
+                $niceLine = explode(";", $line[0]);
                 if ($row == 0) {
-                    $formFieldIDs = self::getNiceFormFieldIDs($line);
+                    $formFieldIDs = self::getNiceFormFieldIDs($niceLine);
                 } else {
-                    self::createRecordSetItem($recordSetID, $formFieldIDs, $line);
+                    self::createRecordSetItem($recordSetID, $formFieldIDs, $niceLine);
                 }
+  
                 $row++;
             }
             fclose($file);
@@ -231,8 +232,7 @@ class CustomDataImporterHelper extends EveryRESTfulAPIHelper {
 
         $recordSetItem = new RecordSetItem();
         $recordSetItem->RecordSetID = $recordSetID;
-        $recordSetItem->Temporary = false;
-        $recordSetItem->writeWithoutVersion();
+        $recordSetItem->write();
         self::createRecordSetItemData($recordSetItem->ID, $formFieldIDs, $itemData);
     }
 

@@ -35,6 +35,7 @@ class EveryRESTfulAPIDataObjectExtension extends DataExtension {
     }
 
     public function getFormFields($request = false) {
+        $Client = isset($_GET['Client']) && $_GET['Client'] ? strip_tags($_GET['Client']): 'frontend';
         $fields = setFormFields($this->owner->ClassName, $this->owner->getCMSFields(), $this, $this->owner, $this->owner->Slug, $this->dbObject);
         $formFields = [];
         $checkFields = [];
@@ -62,7 +63,7 @@ class EveryRESTfulAPIDataObjectExtension extends DataExtension {
                             'Type' => strip_tags($name) == 'Slug' ? 'readonlyfield' : strip_tags(getNiceFieldType($type, $class, $name, $this->owner->ClassName)),
                             'Index' => $f,
                             'Setting' => $setting,
-                            'Value' => getNiceFieldValue($columnField, $this->slug, $this->owner->ClassName)
+                            'Value' => $Client == 'mobileapp' ? ['data' => getNiceFieldValue($columnField, $this->slug, $this->owner->ClassName)] : getNiceFieldValue($columnField, $this->slug, $this->owner->ClassName)
                         );
                         $checkFields[] = strip_tags($name);
                         $f++;

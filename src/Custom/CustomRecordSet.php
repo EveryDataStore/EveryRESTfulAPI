@@ -21,6 +21,7 @@ class CustomRecordSet extends Controller {
             $formData = json_decode($request->getBody(), true);
             if (!empty($formData) && isset($formData['Record'])) {
                 $import = isset($formData['Record']['Import']) ? true : false;
+                
                 $record = setRecordSet($formData['Record'], $import);
                 $recordForm = $record->Form()->ID > 0 ? $record->Form() : initForm($record->ID);
                 setFormData($formData['Record'], $recordForm->ID, $import);

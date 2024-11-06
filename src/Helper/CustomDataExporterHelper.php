@@ -31,7 +31,7 @@ class CustomDataExporterHelper extends EveryRESTfulAPIHelper {
             $body = json_decode($request->getBody(), true);
             $type = $body['type'];
             $recordSetItems = isset($body['recordItems']) ? $body['recordItems']: [];
-            $exportFile = self::createExportTmpFile($type, $recordSet->Title);
+            $exportFile = self::createExportTmpFile($type, str_replace(' ','',$recordSet->Title));
             
             if ($exportFile) {
                 if ($type == 'csv') {
@@ -125,7 +125,7 @@ class CustomDataExporterHelper extends EveryRESTfulAPIHelper {
                 }
                 fclose($fp);
             unset($csvItems);
-            $objFile = self::createExportFile($file, 'csv', $recordSet->Title);
+            $objFile = self::createExportFile($file, 'csv', str_replace(' ','',$recordSet->Title));
             $fileURL = Director::absoluteBaseURL().$objFile['fileSourceURL'] . '?hash=' . $objFile['file']->FileHash;
             return array('fileURL' => $fileURL);
             }
@@ -292,6 +292,7 @@ class CustomDataExporterHelper extends EveryRESTfulAPIHelper {
         $file = new File();
         $file->setFromLocalFile($fileLocal, $folder->Filename . $fileName);
         $file->write();
+        $file->publishSingle();
         
         $filePath = ASSETS_PATH . '/.protected' . str_replace('/assets', '', $file->getSourceURL());
         if (fopen($filePath, 'r')) {

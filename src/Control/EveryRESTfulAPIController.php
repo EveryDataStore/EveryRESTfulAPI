@@ -162,7 +162,11 @@ class EveryRESTfulAPIController extends Controller {
      */
     public function answer($outdata = null, $statusCode = 200, $statusDescription = null) {
         $this->getResponse()->addHeader('Content-type', 'application/json');
-        $this->getResponse()->setStatusCode($statusCode, $statusDescription);
+        if($statusCode >= 400){
+             $this->httpError($statusCode, $statusDescription);
+        }else{
+            $this->getResponse()->setStatusCode($statusCode, $statusDescription);
+        }
         $out = '';
         if ($outdata !== null) {
            $out = $outdata;

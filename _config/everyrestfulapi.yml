@@ -43,7 +43,7 @@ SilverStripe\Security\Member:
         - Company
         - Address
         - City
-        - Postcode
+        - PostCode
         - Country
         - Phone
         - Created
@@ -59,7 +59,7 @@ SilverStripe\Security\Member:
         - Company
         - Address
         - City
-        - Postcode
+        - PostCode
         - Country
         - Phone
         - Locale
@@ -74,7 +74,7 @@ SilverStripe\Security\Member:
         - Company
         - Address
         - City
-        - Postcode
+        - PostCode
         - Country
         - Phone
         - Locale
@@ -423,3 +423,4 @@ API_RealationField_Allowed_Models:
     - Menu
     - Member
     - Group
+    
