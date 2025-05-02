@@ -70,7 +70,7 @@ class CustomAssetHelper extends EveryRESTfulAPIHelper {
             'UpdatedBy' => $obj->UpdatedBy()->getFullName(),
             'LastEdited' => self::getNiceDateTimeFormat($obj->LastEdited),
             'Created' => self::getNiceDateTimeFormat($obj->Created),
-            'Filename' => $obj->Filename,
+            'Filename' => $obj->URL,
             'Link' => Director::absoluteBaseURL().$obj->URL . $CanViewType,
             'CanViewType' => $obj->CanViewType,
             'CanEditType' => $obj->CanEditType,

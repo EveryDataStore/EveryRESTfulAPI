@@ -2,11 +2,13 @@
 
 namespace EveryRESTfulAPI\Custom;
 
+use EveryRESTfulAPI\Helper\EveryRESTfulAPIHelper;
 use SilverStripe\Control\Controller;
 use EveryDataStore\Model\RecordSet\RecordSet;
 use EveryDataStore\Model\RecordSet\RecordSetItem;
 
-include_once str_replace('Custom','',__DIR__).'ProtectedAPI/ProtectedCustomRecordSet.php';
+
+include_once str_replace('Custom','',__DIR__).'ProtectedAPI/ProtectedCustomRecordSet'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
 
 class CustomRecordSet extends Controller {
 

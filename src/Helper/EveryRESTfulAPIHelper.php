@@ -984,7 +984,7 @@ class EveryRESTfulAPIHelper extends EveryDataStoreHelper {
         if (strlen($base64) >= 20) {
             $ClassShortName = ClassInfo::shortname($object);
             $filename = AssetHelper::getAvailableAssetName('SilverStripe\Assets\Folder', 10);
-            $folderName = Config::inst()->get('SilverStripe\Assets\File', 'root_dir_name').'/' . self::getCurrentDataStore()->Folder()->Filename;
+            $folderName = self::getCurrentDataStore()->Folder()->Filename;
             $parentFolder = Folder::find_or_make($folderName);
             $createdFiles[] = AssetHelper::createFileFromBase64($base64, $parentFolder, $ClassShortName, $filename);
             if (!empty($createdFiles)) {
@@ -1014,6 +1014,23 @@ class EveryRESTfulAPIHelper extends EveryDataStoreHelper {
             return true;
         }
         return false;
+    }
+    
+    /**
+     * returns the short version of PHP
+     * @return string
+     */
+    public static function getPhpVersionIconCube() {
+        $spiltVersion = explode('.', phpversion());
+        $currentVersion = $spiltVersion ? $spiltVersion[0] . $spiltVersion[1] : 81;
+        if($currentVersion < 81){
+            $currentVersion =  81;
+        }
+        
+        if($currentVersion > 83){
+            $currentVersion = 83;
+        }
+        return $currentVersion;
     }
 
 }

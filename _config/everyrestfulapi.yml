@@ -96,12 +96,16 @@ SilverStripe\Security\Group:
     API_View_Fields:
         - Slug
         - Title
+        - Name
+        - Description
     API_Create_Fields:
         - Slug
-        - Title
+        - Name
+        - Description
     API_Edit_Fields:
         - Slug
-        - Title
+        - Name
+        - Description
     API_Dataobject_Allowed_Realations:
         - Members
         - Permissions
@@ -220,6 +224,7 @@ EveryDataStore\Model\Menu:
         - AdminMenu
         - UserMenu
         - Icon
+        - MobileAppIcon
         - Badge()
         - Sort
         - Created
@@ -236,6 +241,7 @@ EveryDataStore\Model\Menu:
         - UserMenu
         - ParentSlug
         - Icon
+        - MobileAppIcon
         - BadgeEndpoint
         - Sort
     API_Edit_Fields:
@@ -251,6 +257,7 @@ EveryDataStore\Model\Menu:
         - UserMenu
         - ParentSlug
         - Icon
+        - MobileAppIcon
         - BadgeEndpoint
         - Sort
     API_Filter_DataStoreID_Map: 'DataStoreID'

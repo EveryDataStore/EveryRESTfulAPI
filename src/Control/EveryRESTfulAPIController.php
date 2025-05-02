@@ -10,7 +10,7 @@ use SilverStripe\ORM\DataList;
 use SilverStripe\Core\Config\Config;
 
 
-include_once str_replace('Control','',__DIR__).'ProtectedAPI/ProtectedAPI.php';
+include_once str_replace('Control','',__DIR__).'ProtectedAPI/ProtectedAPI'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
 
 /** EveryDataStore/EveryRESTfulAPI
  * 
@@ -111,7 +111,6 @@ class EveryRESTfulAPIController extends Controller {
      */
     public function info(HTTPRequest $request) {
         $props = $this->getNiceClassProperties();
-        echo 'WHAT';
         return protected_api_info($this, $props);
     }
    
