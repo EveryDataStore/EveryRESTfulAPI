@@ -87,10 +87,11 @@ class CustomRecordSet extends Controller {
             $orderOpt = isset($fields['OrderOpt']) ? $fields['OrderOpt'] : 'ASC';
             $orderColumn = isset($fields['OrderColumn']) ? getOrderColumn($fields['OrderColumn'], $recordSlug) : '';
             $searchColumns = getSearchColumns(explode(',', $filter));
-            return getRecordItems($record, $page, $length, $searchColumns, $orderColumn, $createdFrom, $createdTo, $totalResults, $orderOpt);
+
+            return getRecordItems($record, $page, $length, $searchColumns, $orderColumn, $createdFrom, $createdTo, $totalResults, 1, $orderOpt);
         }
     }
-
+    
     public function printRecordItem($request, $itemSlug) {
         $recordItem = RecordSetItem::get()->filter(['Slug' => $itemSlug])->first();
         if ($recordItem) {
@@ -129,4 +130,5 @@ class CustomRecordSet extends Controller {
     public static function setFormData($formData, $recordSetFormID){
          setFormData($formData, $recordSetFormID);
     }
+
 }

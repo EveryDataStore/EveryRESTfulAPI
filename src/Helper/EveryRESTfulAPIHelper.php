@@ -18,7 +18,7 @@ use SilverStripe\Security\MemberPassword;
 use SilverStripe\Assets\Folder;
 use SilverStripe\ORM\DB;
 
-/** EveryDataStore/EveryRESTfulAPI v1.0
+/** EveryDataStore/EveryRESTfulAPI v1.3
  *
  * This class includes implementation of functions that ensure secure exchange of information
  * as well as implementation of object relations

@@ -10,7 +10,7 @@ use SilverStripe\Assets\Folder;
 use SilverStripe\Assets\File;
 use SilverStripe\Control\Director;
 
-/** EveryDataStore/EveryRESTfulAPI v1.0
+/** EveryDataStore/EveryRESTfulAPI v1.3
  * 
  * This class implements export functions for Model and Record data
  * 

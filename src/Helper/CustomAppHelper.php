@@ -9,7 +9,7 @@ use EveryDataStore\Model\EveryConfiguration;
 use EveryDataStore\Model\Menu;
 use SilverStripe\Core\Config\Config;
 
-/** EveryDataStore/EveryRESTfulAPI v1.0
+/** EveryDataStore/EveryRESTfulAPI v1.3
  * 
  * This class implements logic behind installing/deinstalling of the apps, 
  * as well as dataStore setups according to app installations

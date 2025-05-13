@@ -13,7 +13,7 @@ use SilverStripe\ORM\DataObject;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Assets\Folder;
 
-/** EveryDataStore/EveryRESTfulAPI v1.0
+/** EveryDataStore/EveryRESTfulAPI v1.3
  * 
  * This class implements import functions for Model and Record data
  * 

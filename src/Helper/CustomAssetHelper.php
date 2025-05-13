@@ -12,7 +12,7 @@ use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Versioned\Versioned;
 
 
-/** EveryDataStore/EveryRESTfulAPI v1.0
+/** EveryDataStore/EveryRESTfulAPI v1.3
  * 
  * This class implements asset related functions, i.e., folders, files and notes
  * 
