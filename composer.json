@@ -1,0 +1,23 @@
+{
+  "name": "everydatastore/everyrestfulapi",
+  "description": "Provides a RESTful API interface for the EveryDataStore ECM platform.",
+  "type": "silverstripe-vendormodule",
+  "homepage": "https://everydatastore.org/en/apps/everyrestfulapi",
+  "authors": [
+    {
+      "name": "EveryDataStore GmbH"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "everydatastore/everydatastorebackend": "^1.5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "EveryRESTfulAPI\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
+
