@@ -10,7 +10,7 @@ use SilverStripe\ORM\DataList;
 use SilverStripe\Core\Config\Config;
 
 
-include_once str_replace('Control','',__DIR__).'ProtectedAPI/ProtectedAPI'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
+include_once dirname(__DIR__, 1).'/ProtectedAPI/ProtectedAPI'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
 
 /** EveryDataStore/EveryRESTfulAPI
  * 

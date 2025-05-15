@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^8.1",
-    "everydatastore/everydatastorebackend": "^1.5.3"
+    "everydatastore/everydatastorebackend": "^1.5.4"
   },
   "autoload": {
     "psr-4": {

@@ -7,7 +7,7 @@ use SilverStripe\Core\Config\Config;
 use EveryRESTfulAPI\Helper\EveryRESTfulAPIHelper;
 
 
-include_once str_replace('Extension','',__DIR__).'ProtectedAPI/ProtectedDataObjectExtension'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
+include_once dirname(__DIR__, 1).'/ProtectedAPI/ProtectedDataObjectExtension'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
 
 
 class EveryRESTfulAPIDataObjectExtension extends DataExtension {
