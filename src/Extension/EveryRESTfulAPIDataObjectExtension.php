@@ -7,9 +7,6 @@ use SilverStripe\Core\Config\Config;
 use EveryRESTfulAPI\Helper\EveryRESTfulAPIHelper;
 
 
-include_once dirname(__DIR__, 1).'/ProtectedAPI/ProtectedDataObjectExtension'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
-
-
 class EveryRESTfulAPIDataObjectExtension extends DataExtension {
 
     private static $db = array();

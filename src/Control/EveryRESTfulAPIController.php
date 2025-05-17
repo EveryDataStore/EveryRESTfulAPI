@@ -11,6 +11,9 @@ use SilverStripe\Core\Config\Config;
 
 
 include_once dirname(__DIR__, 1).'/ProtectedAPI/ProtectedAPI'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
+include(dirname(__DIR__, 1).'/ProtectedAPI/ProtectedCustomRecordSet'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php');
+include_once dirname(__DIR__, 1).'/ProtectedAPI/ProtectedDataObjectExtension'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
+
 
 /** EveryDataStore/EveryRESTfulAPI
  * 

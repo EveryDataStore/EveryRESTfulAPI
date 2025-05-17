@@ -8,7 +8,6 @@ use EveryDataStore\Model\RecordSet\RecordSet;
 use EveryDataStore\Model\RecordSet\RecordSetItem;
 
 
-include_once dirname(__DIR__, 1).'/ProtectedAPI/ProtectedCustomRecordSet'.EveryRESTfulAPIHelper::getPhpVersionIconCube().'.php';
 
 class CustomRecordSet extends Controller {
 
